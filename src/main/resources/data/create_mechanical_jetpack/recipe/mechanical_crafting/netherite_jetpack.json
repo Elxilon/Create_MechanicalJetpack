@@ -1,0 +1,39 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": false,
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:elytra"
+    },
+    "B": {
+      "item": "create:netherite_backtank"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "M": {
+      "item": "create:precision_mechanism"
+    },
+    "P": {
+      "item": "create:propeller"
+    },
+    "F": {
+      "item": "create:fluid_pipe"
+    },
+    "I": {
+      "tag": "c:plates/iron"
+    }
+  },
+  "pattern": [
+    " S ",
+    "IMI",
+    "FBF",
+    "FEF",
+    "P P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_mechanical_jetpack:netherite_jetpack"
+  }
+}

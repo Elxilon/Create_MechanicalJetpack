@@ -1,5 +1,8 @@
 {
-  "itemGroup.create_mechanical_jetpack": "Mechanical Jetpack Tab",
+  "itemGroup.create_mechanical_jetpack.base": "Mechanical Jetpack",
+
   "block.create_mechanical_jetpack.example_block": "Mechanical Jetpack Block",
-  "item.create_mechanical_jetpack.example_item": "Mechanical Jetpack"
+
+  "item.create_mechanical_jetpack.copper_jetpack": "Copper Jetpack",
+  "item.create_mechanical_jetpack.netherite_jetpack": "Netherite Jetpack"
 }

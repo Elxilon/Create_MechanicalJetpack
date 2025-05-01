@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "addition": {
+    "item": "create_mechanical_jetpack:copper_jetpack"
+  },
+  "result": {
+    "count": 1,
+    "id": "create_mechanical_jetpack:netherite_jetpack"
+  }
+}
