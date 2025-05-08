@@ -4,31 +4,49 @@ import com.elxilon.create_mechanical_jetpack.CreateMechanicalJetpack;
 import com.simibubi.create.content.equipment.armor.BacktankBlock;
 import com.simibubi.create.content.equipment.armor.BacktankBlockEntity;
 import com.simibubi.create.content.equipment.armor.BacktankRenderer;
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.kinetics.base.SingleAxisRotatingVisual;
+import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.tterrag.registrate.builders.BlockEntityBuilder;
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class JetpackBlock extends BacktankBlock {
+public class JetpackBlock extends BacktankBlock implements IBE<BacktankBlockEntity>, IWrenchable {
     private static final CreateRegistrate REGISTRATE = CreateMechanicalJetpack.registrate();
 
-    public final static BlockEntityBuilder<BacktankBlockEntity, ?> JETPACK_BLOCK_ENTITY_BUILDER = REGISTRATE
+    public final static BlockEntityEntry<BacktankBlockEntity> JETPACK_BLOCK_ENTITY = REGISTRATE
             .blockEntity("jetpack", BacktankBlockEntity::new)
             .visual(() -> SingleAxisRotatingVisual::backtank)
-            .renderer(() -> BacktankRenderer::new);
-
-    private static BlockEntityType<BacktankBlockEntity> jetpackBlockEntityType;
+            .validBlocks(MJBlocks.COPPER_JETPACK_BLOCK, MJBlocks.NETHERITE_JETPACK_BLOCK)
+            .renderer(() -> BacktankRenderer::new)
+            .register();
 
     public JetpackBlock(Properties properties) {
         super(properties);
     }
 
-    public static void registerBlockEntityType(BlockEntityType<BacktankBlockEntity> type) {
-        jetpackBlockEntityType = type;
+    @Override
+    public BlockEntityType<? extends BacktankBlockEntity> getBlockEntityType() {
+        return JETPACK_BLOCK_ENTITY.get();
     }
 
     @Override
-    public BlockEntityType<? extends BacktankBlockEntity> getBlockEntityType() {
-        return jetpackBlockEntityType;
+    public InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
+        onWrenched(state, context);
+        return super.onSneakWrenched(state, context);
+    }
+
+    @Override
+    public InteractionResult onWrenched(BlockState state, UseOnContext context) {
+        Player player = context.getPlayer();
+        if (!player.isCreative()) {
+            player.getInventory().placeItemBackInInventory(new ItemStack(state.getBlock()));
+        }
+        return InteractionResult.SUCCESS;
     }
 }

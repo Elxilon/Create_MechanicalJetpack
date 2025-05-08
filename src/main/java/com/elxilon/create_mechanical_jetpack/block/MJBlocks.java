@@ -3,15 +3,14 @@ package com.elxilon.create_mechanical_jetpack.block;
 import com.elxilon.create_mechanical_jetpack.CreateMechanicalJetpack;
 import com.elxilon.create_mechanical_jetpack.item.MJItems;
 import com.simibubi.create.AllDataComponents;
-import com.simibubi.create.content.equipment.armor.BacktankBlockEntity;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
+import com.simibubi.create.api.stress.BlockStressValues;
 import com.tterrag.registrate.builders.BlockBuilder;
-import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.minecraft.client.renderer.RenderType;
@@ -36,6 +35,7 @@ public class MJBlocks {
         return b -> b.blockstate((c, p) -> p.horizontalBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
                 .transform(pickaxeOnly())
                 .addLayer(() -> RenderType::cutoutMipped)
+                .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> 4.0))
                 .loot((lt, block) -> {
                     Builder builder = LootTable.lootTable();
                     LootItemCondition.Builder survivesExplosion = ExplosionCondition.survivesExplosion();
@@ -60,12 +60,5 @@ public class MJBlocks {
                     .transform(jetpack(MJItems.NETHERITE_JETPACK::get))
                     .register();
 
-    public static final BlockEntityEntry<BacktankBlockEntity> JETPACK_BLOCK_ENTITY =
-            JetpackBlock.JETPACK_BLOCK_ENTITY_BUILDER
-                    .validBlocks(COPPER_JETPACK_BLOCK, NETHERITE_JETPACK_BLOCK)
-                    .register();
-
-    public static void register() {
-        // JetpackBlock.registerBlockEntityType(JETPACK_BLOCK_ENTITY.get());
-    }
+    public static void register() {}
 }
