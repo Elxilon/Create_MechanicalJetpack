@@ -2,15 +2,14 @@ package com.elxilon.create_mechanical_jetpack.item;
 
 import com.elxilon.create_mechanical_jetpack.CreateMechanicalJetpack;
 import com.elxilon.create_mechanical_jetpack.block.MJBlocks;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
 import com.simibubi.create.content.equipment.armor.BacktankItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 public class MJItems {
     private static final CreateRegistrate REGISTRATE = CreateMechanicalJetpack.registrate();
@@ -32,16 +31,14 @@ public class MJItems {
     public static final ItemEntry<JetpackItem> COPPER_JETPACK = REGISTRATE
             .item("copper_jetpack",
                     p -> new JetpackItem(AllArmorMaterials.COPPER, p, Create.asResource("copper_diving"), COPPER_JETPACK_PLACEABLE))
-            .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
-            .tag(ItemTags.CHEST_ARMOR)
+            .properties(p -> p.rarity(Rarity.RARE))
             .register();
 
     public static final ItemEntry<JetpackItem> NETHERITE_JETPACK = REGISTRATE
             .item("netherite_jetpack",
                     p -> new JetpackItem(ArmorMaterials.NETHERITE, p, Create.asResource("netherite_diving"), NETHERITE_JETPACK_PLACEABLE))
             .properties(Item.Properties::fireResistant)
-            .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
-            .tag(ItemTags.CHEST_ARMOR)
+            .properties(p -> p.rarity(Rarity.EPIC))
             .register();
 
     public static void register() {}
