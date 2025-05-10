@@ -1,7 +1,6 @@
 package com.elxilon.create_mechanical_jetpack;
 
 import com.elxilon.create_mechanical_jetpack.block.MJBlocks;
-import com.elxilon.create_mechanical_jetpack.item.MJCreativeModeTabs;
 import com.elxilon.create_mechanical_jetpack.item.MJItems;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
@@ -61,9 +60,7 @@ public class CreateMechanicalJetpack
         NeoForge.EVENT_BUS.register(this);
 
         REGISTRATE.defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
-        REGISTRATE.setCreativeTab(MJCreativeModeTabs.DEFAULT_TAB);
 
-        MJCreativeModeTabs.register(modEventBus);
         MJItems.register();
         MJBlocks.register();
 
