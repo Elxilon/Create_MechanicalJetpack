@@ -11,6 +11,7 @@ import com.simibubi.create.content.equipment.armor.BacktankItem;
 import com.simibubi.create.content.equipment.armor.BacktankUtil;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -29,10 +30,10 @@ public class MJItems {
                     p -> new BacktankItem.BacktankBlockItem(MJBlocks.NETHERITE_JETPACK_BLOCK.get(), MJItems.NETHERITE_JETPACK::get, p))
             .register();
 
-    public static final ItemEntry<JetpackItem> COPPER_JETPACK = REGISTRATE
+    public static final ItemEntry<? extends BacktankItem> COPPER_JETPACK = REGISTRATE
             .item("copper_jetpack",
                     p -> new JetpackItem(AllArmorMaterials.COPPER, p, Create.asResource("copper_diving"), COPPER_JETPACK_PLACEABLE))
-            .properties(p -> p.rarity(Rarity.RARE))
+            .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(itemBuilder -> {
                 itemBuilder.tab(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey(), (tab, output) -> {
                     ItemStack stack = new ItemStack(itemBuilder.getEntry());
@@ -41,14 +42,15 @@ public class MJItems {
                 });
                 return itemBuilder;
             })
+            .tag(ItemTags.CHEST_ARMOR)
             .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
             .register();
 
-    public static final ItemEntry<JetpackItem> NETHERITE_JETPACK = REGISTRATE
+    public static final ItemEntry<? extends BacktankItem> NETHERITE_JETPACK = REGISTRATE
             .item("netherite_jetpack",
-                    p -> new JetpackItem(ArmorMaterials.NETHERITE, p, Create.asResource("netherite_diving"), NETHERITE_JETPACK_PLACEABLE))
+                    p -> new JetpackItem.Layered(ArmorMaterials.NETHERITE, p, Create.asResource("netherite_diving"), NETHERITE_JETPACK_PLACEABLE))
             .properties(Item.Properties::fireResistant)
-            .properties(p -> p.rarity(Rarity.EPIC))
+            .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(itemBuilder -> {
                 itemBuilder.tab(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey(), (tab, output) -> {
                     ItemStack stack = new ItemStack(itemBuilder.getEntry());
@@ -57,6 +59,7 @@ public class MJItems {
                 });
                 return itemBuilder;
             })
+            .tag(ItemTags.CHEST_ARMOR)
             .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
             .register();
 

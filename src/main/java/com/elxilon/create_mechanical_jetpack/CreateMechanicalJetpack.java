@@ -2,10 +2,12 @@ package com.elxilon.create_mechanical_jetpack;
 
 import com.elxilon.create_mechanical_jetpack.block.MJBlocks;
 import com.elxilon.create_mechanical_jetpack.item.MJItems;
+
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
+
 import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;

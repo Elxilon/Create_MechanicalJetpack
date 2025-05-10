@@ -1,8 +1,18 @@
 {
   "itemGroup.create_mechanical_jetpack.base": "Mechanical Jetpack",
 
-  "block.create_mechanical_jetpack.example_block": "Mechanical Jetpack Block",
-
   "item.create_mechanical_jetpack.copper_jetpack": "Copper Jetpack",
-  "item.create_mechanical_jetpack.netherite_jetpack": "Netherite Jetpack"
+  "item.create_mechanical_jetpack.netherite_jetpack": "Netherite Jetpack",
+
+  "item.create_mechanical_jetpack.copper_jetpack.tooltip.summary": "A _Wearable_ _Jetpack_ powered by Pressurized Air.",
+  "item.create_mechanical_jetpack.copper_jetpack.tooltip.condition1": "When Worn",
+  "item.create_mechanical_jetpack.copper_jetpack.tooltip.behaviour1": "Allows _Flight_ using _Pressurized_ _Air_ and keep _Backtank_ properties.",
+  "item.create_mechanical_jetpack.copper_jetpack.tooltip.condition2": "When placed, Powered by Kinetics",
+  "item.create_mechanical_jetpack.copper_jetpack.tooltip.behaviour2": "_Stores_ _Pressurized_ _Air_ at a rate depending on the Rotational Speed.",
+
+  "item.create_mechanical_jetpack.netherite_jetpack.tooltip.summary": "A _Wearable_ _Jetpack_ powered by Pressurized Air.",
+  "item.create_mechanical_jetpack.netherite_jetpack.tooltip.condition1": "When Worn",
+  "item.create_mechanical_jetpack.netherite_jetpack.tooltip.behaviour1": "Allows _Flight_ using _Pressurized_ _Air_ and keep _Backtank_ properties.",
+  "item.create_mechanical_jetpack.netherite_jetpack.tooltip.condition2": "When placed, Powered by Kinetics",
+  "item.create_mechanical_jetpack.netherite_jetpack.tooltip.behaviour2": "_Stores_ _Pressurized_ _Air_ at a rate depending on the Rotational Speed."
 }

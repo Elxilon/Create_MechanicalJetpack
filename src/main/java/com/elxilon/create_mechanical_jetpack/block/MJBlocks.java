@@ -2,17 +2,17 @@ package com.elxilon.create_mechanical_jetpack.block;
 
 import com.elxilon.create_mechanical_jetpack.CreateMechanicalJetpack;
 import com.elxilon.create_mechanical_jetpack.item.MJItems;
+
+import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import com.simibubi.create.AllDataComponents;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
-
-import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
-
 import com.simibubi.create.api.stress.BlockStressValues;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
+
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
