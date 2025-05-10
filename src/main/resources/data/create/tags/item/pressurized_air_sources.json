@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_mechanical_jetpack:copper_jetpack",
+    "create_mechanical_jetpack:netherite_jetpack"
+  ]
+}

@@ -2,6 +2,7 @@ package com.elxilon.create_mechanical_jetpack.item;
 
 import com.elxilon.create_mechanical_jetpack.CreateMechanicalJetpack;
 import com.elxilon.create_mechanical_jetpack.block.MJBlocks;
+import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
 import com.simibubi.create.content.equipment.armor.BacktankItem;
@@ -32,6 +33,7 @@ public class MJItems {
             .item("copper_jetpack",
                     p -> new JetpackItem(AllArmorMaterials.COPPER, p, Create.asResource("copper_diving"), COPPER_JETPACK_PLACEABLE))
             .properties(p -> p.rarity(Rarity.RARE))
+            .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
             .register();
 
     public static final ItemEntry<JetpackItem> NETHERITE_JETPACK = REGISTRATE
@@ -39,6 +41,7 @@ public class MJItems {
                     p -> new JetpackItem(ArmorMaterials.NETHERITE, p, Create.asResource("netherite_diving"), NETHERITE_JETPACK_PLACEABLE))
             .properties(Item.Properties::fireResistant)
             .properties(p -> p.rarity(Rarity.EPIC))
+            .tag(AllTags.AllItemTags.PRESSURIZED_AIR_SOURCES.tag)
             .register();
 
     public static void register() {}
