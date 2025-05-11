@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "create:copper_backtank",
+    "create:netherite_backtank",
+    {
+      "id": "create_mechanical_jetpack:copper_jetpack",
+      "required": false
+    },
+    {
+      "id": "create_mechanical_jetpack:netherite_jetpack",
+      "required": false
+    }
+  ]
+}
